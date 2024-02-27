@@ -1,29 +1,16 @@
-import { ChangeEvent, useState } from 'react';
+import { useState } from 'react';
+import Timer from './component/Timer';
 
 const App = () => {
-  const [names, setNames] = useState(["주철민"]);
-  const [name , setName] = useState('')
+  const [isTimer, setIsTimer] = useState(false);
 
-  const onChangeName = (e : ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value)
-  }
-
-  const onClickSubmitBtn = () => {
-    setNames((prev) => {
-      console.log("prev",prev)
-    return [name, ...prev]})
-  }
-
+  const onCLickTimerBtn = () => {
+    setIsTimer((prev) => !prev);
+  };
   return (
     <div>
-      <p>이름을 입력하시면 출력됩니다.</p>
-      <div>
-        <input onChange={onChangeName} type='text' />
-        <button onClick={onClickSubmitBtn}>등록</button>
-      </div>
-      {names.map((name) => (
-        <h1>{name}</h1>
-      ))}
+      {isTimer && <Timer />}
+      <button onClick={onCLickTimerBtn}>Timer</button>
     </div>
   );
 };
