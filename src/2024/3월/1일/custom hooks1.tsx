@@ -1,28 +1,30 @@
-import { useEffect, useRef } from 'react';
-import { useInput } from './customHooks/useInput';
+// import { useEffect } from 'react';
+// import { useInput } from './customHooks/useInput';
+// import useFocus from './customHooks/useFocus';
 
 
 
-const App = () => {
-  const [inputValue, onChangeValue, onClickAlert] = useInput(
-    ""
-  );
+// const App = () => {
+//   const [inputValue, onChangeValue, onClickAlert] = useInput(
+//     ""
+//   );
 
-  const focusRef = useRef<HTMLInputElement>(null);
-  useEffect(() => {
-    if (focusRef.current) {
-      focusRef.current.focus();
-      console.log(focusRef);
-    }
-  });
+//   const [focusRef] = useFocus()
 
-  return (
-    <div>
-      <h1>useInput</h1>
-      <input ref={focusRef} value={inputValue} onChange={onChangeValue} />
-      <button onClick={onClickAlert}>확인</button>
-    </div>
-  );
-};
+//   useEffect(() => {
+//     if (focusRef.current) {
+//       focusRef.current.focus();
+//       console.log(focusRef);
+//     }
+//   });
 
-export default App;
+//   return (
+//     <div>
+//       <h1>useInput</h1>
+//       <input ref={focusRef} value={inputValue} onChange={onChangeValue} />
+//       <button onClick={onClickAlert}>확인</button>
+//     </div>
+//   );
+// };
+
+// export default App;
